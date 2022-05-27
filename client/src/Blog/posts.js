@@ -1,15 +1,15 @@
 import React from 'react';
-import LogoutButton from '../Components/logout-button';
-
+import PostItem from "./postitem";
 
 export default function Posts(props) {
     
   return (
     <div>
         <h1>Blog</h1>
-        {
-            <LogoutButton />
-        }
+        <br />
+        <PostItem />
+        <PostItem />
+
     </div>
   )
 }

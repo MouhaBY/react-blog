@@ -1,6 +1,4 @@
 import React from 'react';
-import { withAuthenticationRequired } from '@auth0/auth0-react';
-import Loading from '../Components/Loading';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Profile = () => {
@@ -9,6 +7,7 @@ const Profile = () => {
 
   return (
     <div>
+        <h1>Your Profile</h1>
       <div className="row align-items-center profile-header">
         <div className="col-md-2 mb-3">
           <img
@@ -31,6 +30,4 @@ const Profile = () => {
   );
 };
 
-export default withAuthenticationRequired(Profile, {
-    onRedirecting: () => <Loading />,
-  });
+export default Profile;

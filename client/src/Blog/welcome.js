@@ -5,7 +5,13 @@ export default function Welcome() {
     return (
         <div>
             <h1>Welcome to your Blog</h1>
-            <LoginButton />
+            <div>
+                <p>Join us</p>
+                <LoginButton />        
+            </div>
+            <nav>
+                
+            </nav>
         </div>
     )
 }
