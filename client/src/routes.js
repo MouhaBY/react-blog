@@ -7,6 +7,7 @@ import AddPost from './Blog/addpost';
 import NotFound from './Components/NotFound';
 import Welcome from './Blog/welcome';
 import Profile from './Components/Profile';
+import Author from './Blog/author';
 
 
 export default function routes() {
@@ -19,6 +20,7 @@ export default function routes() {
             <Route path="/editpost/:pid" element={<EditPost />} />
             <Route path="/post/:pid" element={<ShowPost />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/author/:aid" element={<Author />} />
         </Routes>
     )
 }

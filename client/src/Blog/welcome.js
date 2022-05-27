@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import LoginButton from '../Components/login-button';
+
 
 export default function Welcome() {
     return (
@@ -9,9 +10,6 @@ export default function Welcome() {
                 <p>Join us</p>
                 <LoginButton />        
             </div>
-            <nav>
-                
-            </nav>
         </div>
     )
 }
