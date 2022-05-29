@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PostList from './postList';
+import axios from "axios";
+import * as ACTIONS from "../store/actions/actions";
+import { useDispatch, useSelector } from 'react-redux';
 
 
-const POSTS = [
-    {id:1, title:"Say Hi to the all new Peugeot 407", description:"The all new sedane from the french company", author:"mouhaBY", creationDate:"11:33 27/05/2022"},
-    {id:2, title:"Welcome to the Volkswagen Golf MK8", description:"New compact from the deutch company", author:"mouhaBY", creationDate:"11:45 27/05/2022"}
-];
+export default function Posts() {
+    const dispatch = useDispatch();
+    const posts = useSelector((state)=> { return state.posts_reducer.posts });
 
-export default function Posts() {   
+    useEffect(()=>{
+        axios.get('/api/get/posts')
+                .then(res => {
+                    dispatch(ACTIONS.fetch_db_posts(res.data))
+                })
+    },[])
+
     return (
         <div>
             <h1>Blog</h1>
             <br />
-            <PostList posts={POSTS} />
+            {
+                posts ? 
+                    <PostList posts={posts} />
+                : null
+            }
         </div>
     )
 }

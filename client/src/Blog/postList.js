@@ -7,7 +7,7 @@ export default function PostList(props) {
         <div>
             {
                 props.posts.map((post) =>
-                    <PostItem key={post.id} post={post}/>
+                    <PostItem key={post.pid} post={post}/>
                 )
             }
         </div>
